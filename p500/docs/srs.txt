@@ -1,0 +1,34 @@
+Software Requirements Specification.
+------------------------------------
+
+1.
+There are 2 layers of design.
+
+There is Components layer:
+Define modules, modules interfaces, data flow between modules, modules configuration.
+
+There is Recepture layer:
+Define process workflow to get expected controller functionality.
+The Recepture use Components layer as an environment to realize expected workflow.
+The Recepture manage set of workflows which are called Recepture itself. 
+
+2.
+Components layer contains 3 kinds of object.
+
+Variable - represent messages conveyed between Components.
+Standard Components - Cannot be controller by Recepture object.
+Controlled Components - Can be controlled by Recepture object.
+
+3.
+All external harwdare as sensors, or valve servos are controlled by Data Bus.
+Data Bus can be CAN, Modbus, in general should be designed as a generic bus
+for exchange the data.
+
+4.
+Each Component has an interface for periodic call for processing.
+There should be set an mechanism to periodically call Components with defined
+priority. 
+
+
+
+

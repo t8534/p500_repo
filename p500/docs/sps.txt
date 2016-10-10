@@ -1,0 +1,84 @@
+
+1.
+Automation Logic Layer:
+All components which create controller engine.
+
+Process Algorithm Layer:
+Receptures, Recepture Scheduler
+
+Operating System Layer:
+System Timer, Scheduler for controller engine, trigger for Recepture Scheduler.
+
+
+2.
+Operating System Layer Classes
+
+SysTimer
+
+
+3.
+Automation Logic Layer Classes.
+
+Comstack
+
+ComMsg
+
+Variable
+    VariableTemp
+    VariableOxygenProbe
+    VariableHProbe
+    VariableNH3Probe
+    VariableInt
+    VariableFloat
+    VariableBool
+    
+
+ComponentCtrl:
+    ControllerPID
+        ControllerPIDHeater
+        ControllerPIDAtmo
+    OxygenSondeModule
+
+ComponentStd:
+    Filter
+    Sensor
+        SensorH
+        SensorNH3
+        SensorOxygen
+        SensorTemp
+    ServoValve
+        ServoValveH
+        ServoValveNH3
+        ServoValveOxygen
+    ServoHeater
+    
+    
+4.
+Process Algorithm Layer Classes
+
+ReceptureScheduler - execute Recepture calling Steps.
+
+ReceptureLibrary<Receptures>
+
+Recetpure
+    Step
+    
+ 
+5.
+ComStack
+
+Non-blocking send, cyclic buffer.
+The info when timeout, buff overflow etc ?
+
+Receiving by Observer.
+Cyclic buffer for received data.
+
+Driver for low level operations.
+
+Many protocols in unified way.
+
+ComStack operate on ComMsg class which carry data.
+
+ 
+
+    
